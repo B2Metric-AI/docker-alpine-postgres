@@ -50,6 +50,26 @@ $ docker run --name some-app --link some-postgres:postgres -d application-that-u
 
 Your app will now be able to access `POSTGRES_PORT_5432_TCP_ADDR` and `POSTGRES_PORT_5432_TCP_PORT` environment variables.
 
+Or docker-compose file configuration like this:
+
+version: '2'
+
+services:
+  postgres:
+    restart: always
+    image: kiasaki/alpine-postgres:9.5
+    environment:
+      - POSTGRES_USER:'foo'
+      - POSTGRES_PASSWORD:'foobar'
+      - POSTGRES_DB:'baz'
+    ports:
+      - '5432:5432'
+    volumes:
+      - database:/var/lib/postgresql/data
+
+volumes:
+  database:
+
 # License
 
 MIT. See `LICENSE` file.
