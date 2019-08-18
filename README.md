@@ -52,6 +52,7 @@ Your app will now be able to access `POSTGRES_PORT_5432_TCP_ADDR` and `POSTGRES_
 
 Or docker-compose file configuration like this:
 
+```
 version: '2'
 
 services:
@@ -69,7 +70,7 @@ services:
 
 volumes:
   database:
-
+```
 # License
 
 MIT. See `LICENSE` file.
